@@ -20,7 +20,28 @@
     </form>
 
     <script>
-       
+        const numero = document.getElementById("temperatura")
+        const celcius = document.getElementById("celcius")
+        const fahrenheit = document.getElementById("fahrenheit")
+        const btn = document.getElementById("btnConverter")
+
+        btn.addEventListener('click', pagina => {
+            pagina.preventDefault()
+            if (celcius.checked == true && fahrenheit.checked == true) return console.log("Escolhe apenas uma conversão")
+            if (celcius.checked == false && fahrenheit.checked == false) return console.log("Escolha uma conversão")
+
+            let temperaturaFinal
+            if (celcius.checked)
+            {
+                temperaturaFinal = (parseInt(numero.value) - 32) * 1.8
+            }
+            else 
+            {
+                temperaturaFinal = (parseInt(numero.value) * 1.8) + 32
+            }
+
+            return console.log(temperaturaFinal)
+        })
     </script>
 
 </body>

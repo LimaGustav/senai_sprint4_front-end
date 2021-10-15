@@ -18,7 +18,21 @@
     </form>
 
     <script>
-     
+
+        const inputMaca = document.getElementById("quantidademaca")
+
+        const btn = document.getElementById("btnCalcular")
+
+        btn.addEventListener('click', pagina => {
+            pagina.preventDefault()
+            var preco
+            if (parseInt(inputMaca.value) < 12) preco = 0.30
+            else preco = 0.25
+
+            let total = parseInt(inputMaca.value) * preco
+            
+            console.log(total)
+        })
     </script>
 
 </body>
